@@ -1,32 +1,35 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() 
+int main()
 {
-	void hanoi(int, char, char, char);
-	int i;
-	printf("how many hanio tower do you want to move:");
-	scanf_s("%d", &i);
-	hanoi(i, 'A', 'B', 'C');
+	int n;
+	while (scanf_s("how many do you want to move?%d", &n) != EOF)
+	{
+		hanoi(n, 'A', 'B', 'C');
+	}
+	printf("finish");
 }
 
-void hanoi(int n, char a, char b, char c)
+void hanoi(int n, char one, char two, char three)
 {
-	void move(char, char);
-	if (n == 1)
+	if (n==0)
 	{
-		move(a, c);
+		return;
+	}
+	else if (n == 1)
+	{
+		move(one, three);
 	}
 	else
 	{
-		hanoi(n - 1, a, c, b);
-		move(a, c);
-		hanoi(n - 1, b, a, c);
+		hanoi(n-1, one, three, two);
+		move(one, three);
+		hanoi(n - 1, two, one, three);
 	}
 }
 
-void move(char a, char b) 
+void move(char from, char to) 
 {
-	printf("%c --> %c\n", a, b);
+	printf("%c -> %c", from, to);
 }
-
