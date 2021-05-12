@@ -3,8 +3,9 @@
 
 int main()
 {
+	void hanoi(int, char, char, char);
 	int n;
-	while (scanf_s("how many do you want to move?%d", &n) != EOF)
+	while (scanf_s("%d", &n) != EOF)
 	{
 		hanoi(n, 'A', 'B', 'C');
 	}
@@ -13,6 +14,7 @@ int main()
 
 void hanoi(int n, char one, char two, char three)
 {
+	void move(char, char);
 	if (n==0)
 	{
 		return;
@@ -31,5 +33,5 @@ void hanoi(int n, char one, char two, char three)
 
 void move(char from, char to) 
 {
-	printf("%c -> %c", from, to);
+	printf("%c -> %c\n", from, to);
 }
