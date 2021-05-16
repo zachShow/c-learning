@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+typedef struct student
+{
+	int num;
+	struct student *next;
+}student,*pStudent;
+
 int main()
 {
-	char b[5][10] = { "b1","c1","d1","a1","e1" };
-	char *p;
-	p = b;
-
-	for (int i = 0; i < 5; i++) 
-	{
-		printf("%s\n", *(p+i)+1);
-	}
+	int arr[10] = { 1,2,3,4,5,6,7 };
+	int *p;
+	p = arr[0];
+	printf("*p=%d\n", *p);
 }
