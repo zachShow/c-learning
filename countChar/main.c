@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//以柱状图打印输入的字符类型(数字，字母，特殊字符)
 int main()
 {
 	char arr[1000];

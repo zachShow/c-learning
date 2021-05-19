@@ -19,7 +19,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkedList", "LinkedList\Li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "countChar", "countChar\countChar.vcxproj", "{E53F9F42-AD53-4587-A8BE-8E43BEE1A898}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stair", "stair\stair.vcxproj", "{0076578B-3851-4CAC-B643-D7C3B4A5B50F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "moveXY", "moveXY\moveXY.vcxproj", "{0076578B-3851-4CAC-B643-D7C3B4A5B50F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

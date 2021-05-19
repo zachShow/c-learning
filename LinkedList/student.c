@@ -1,5 +1,6 @@
 #include "student.h";
 
+//历遍打印
 void printStudent(PStudent pStudent)
 {
 	while (pStudent != NULL)
@@ -9,6 +10,7 @@ void printStudent(PStudent pStudent)
 	}
 }
 
+//头插法
 void headInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -26,6 +28,7 @@ void headInsert(PStudent *pHead, PStudent *pTail, int val)
 	}
 }
 
+//尾插法
 void tailInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -43,6 +46,7 @@ void tailInsert(PStudent *pHead, PStudent *pTail, int val)
 	}
 }
 
+//有序插入
 void sortInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -81,6 +85,7 @@ void sortInsert(PStudent *pHead, PStudent *pTail, int val)
 	}
 }
 
+//删除节点
 void deleteStudent(PStudent *pHead, PStudent *pTail, int val)
 {
 	if (*pHead)

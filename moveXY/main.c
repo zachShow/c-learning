@@ -14,13 +14,22 @@ int main()
 	from->y = 0;
 
 	pposition to = (pposition)calloc(1, sizeof(pposition));
-	to->x = 1;
-	to->y = 1;
+	int x, y;
 
-	int total = move(from, to);
-	printf("一共有%d种方案", total);
+	while (1)
+	{
+		printf("请输入目的地址：\n");
+		scanf_s("%d %d", &x, &y);
+		to->x = x;
+		to->y = y;
+
+		int total = move(from, to);
+		printf("一共有%d种方案\n", total);
+	}
+	
 }
 
+//坐标系移动的方案数量
 int move(pposition from, pposition to)
 {
 	int total = 0;

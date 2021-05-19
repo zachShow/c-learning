@@ -13,6 +13,7 @@ int main()
 	printf("max=%s,second=%s", max, second);
 }
 
+//罩住一个数组中最大及第二大的数字
 void findMaxString(char (*p)[10],int size, char **max,char **second)
 {
 	*max = &p[0];
