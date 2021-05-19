@@ -80,3 +80,36 @@ void sortInsert(PStudent *pHead, PStudent *pTail, int val)
 		}
 	}
 }
+
+void deleteStudent(PStudent *pHead, PStudent *pTail, int val)
+{
+	if (*pHead)
+	{
+		if ((*pHead)->num == val)
+		{
+			*pHead = (*pHead)->next;
+		}
+		else
+		{
+			PStudent front = (*pHead)->next;
+			PStudent back = *pHead;
+			while (front)
+			{
+				if (front->num == val)
+				{
+					break;
+				}
+				back = front;
+				front = front->next;
+			}
+			if (front)
+			{
+				if (front->next == NULL)
+				{
+					*pTail = back;
+				}
+				back->next = front->next;
+			}
+		}
+	}
+}
