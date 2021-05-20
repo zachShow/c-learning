@@ -5,9 +5,10 @@ void printStudent(PStudent pStudent)
 {
 	while (pStudent != NULL)
 	{
-		printf("%d\n", pStudent->num);
+		printf("%d ", pStudent->num);
 		pStudent = pStudent->next;
 	}
+	printf("\n");
 }
 
 //ͷ�巨
@@ -92,7 +93,13 @@ void deleteStudent(PStudent *pHead, PStudent *pTail, int val)
 	{
 		if ((*pHead)->num == val)
 		{
-			*pHead = (*pHead)->next;
+			PStudent pCurrent = *pHead;
+			*pHead = pCurrent->next;
+			free(pCurrent);
+			if (*pHead ==NULL)
+			{
+				*pTail = *pHead;
+			}
 		}
 		else
 		{
@@ -114,6 +121,7 @@ void deleteStudent(PStudent *pHead, PStudent *pTail, int val)
 					*pTail = back;
 				}
 				back->next = front->next;
+				free(front);
 			}
 		}
 	}
