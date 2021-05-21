@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+//µ¹ÖÃ×Ö·û´®
 int main()
 {
 	void reverseWord(char*, char*);

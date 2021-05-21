@@ -1,14 +1,17 @@
 #include "student.h";
 
+//历遍打印
 void printStudent(PStudent pStudent)
 {
 	while (pStudent != NULL)
 	{
-		printf("%d\n", pStudent->num);
+		printf("%d ", pStudent->num);
 		pStudent = pStudent->next;
 	}
+	printf("\n");
 }
 
+//头插法
 void headInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -26,6 +29,7 @@ void headInsert(PStudent *pHead, PStudent *pTail, int val)
 	}
 }
 
+//尾插法
 void tailInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -43,6 +47,7 @@ void tailInsert(PStudent *pHead, PStudent *pTail, int val)
 	}
 }
 
+//有序插入
 void sortInsert(PStudent *pHead, PStudent *pTail, int val)
 {
 	PStudent newStudent = (PStudent)calloc(1, sizeof(Student));
@@ -77,6 +82,47 @@ void sortInsert(PStudent *pHead, PStudent *pTail, int val)
 		else
 		{
 			newStudent->next = pFront;
+		}
+	}
+}
+
+//删除节点
+void deleteStudent(PStudent *pHead, PStudent *pTail, int val)
+{
+	if (*pHead)
+	{
+		if ((*pHead)->num == val)
+		{
+			PStudent pCurrent = *pHead;
+			*pHead = pCurrent->next;
+			free(pCurrent);
+			if (*pHead ==NULL)
+			{
+				*pTail = *pHead;
+			}
+		}
+		else
+		{
+			PStudent front = (*pHead)->next;
+			PStudent back = *pHead;
+			while (front)
+			{
+				if (front->num == val)
+				{
+					break;
+				}
+				back = front;
+				front = front->next;
+			}
+			if (front)
+			{
+				if (front->next == NULL)
+				{
+					*pTail = back;
+				}
+				back->next = front->next;
+				free(front);
+			}
 		}
 	}
 }

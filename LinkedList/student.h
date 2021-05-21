@@ -11,3 +11,4 @@ void printStudent(PStudent pStudent);
 void headInsert(PStudent *pHead, PStudent *pTail, int val);
 void tailInsert(PStudent *pHead, PStudent *pTail, int val);
 void sortInsert(PStudent *pHead, PStudent *pTail, int val);
+void deleteStudent(PStudent *pHead, PStudent *pTail, int val);

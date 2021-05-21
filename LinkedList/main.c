@@ -15,4 +15,10 @@ int main()
 	sortInsert(&head, &tail, 8);
 
 	printStudent(head);
+	int n;
+	while (scanf_s("%d", &n) != EOF)
+	{
+		deleteStudent(&head, &tail, n);
+		printStudent(head);
+	}
 }
