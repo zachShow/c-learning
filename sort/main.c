@@ -12,7 +12,7 @@ int main()
 	}
 	print(arr, size);
 	
-	insert(arr, size);
+	shell(arr, size);
 	print(arr, size);
 
 }
